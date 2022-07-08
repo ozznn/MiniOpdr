@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function buttonClick(letter){
+            var currentString = document.getElementById("clickHistory").innerHTML;
+            var returnString = "U heeft op knop "+letter+" geklikt.<br/>";
+
+            document.getElementById("clickHistory").innerHTML = returnString  + currentString;            
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" value="A" onclick="buttonClick('A')">
+    <input type="button" value="B" onclick="buttonClick('B')">
+    <input type="button" value="C" onclick="buttonClick('C')">
+    <input type="button" value="D" onclick="buttonClick('D')">
+    <div id="clickHistory"> </div>
+</body>
+</html>
