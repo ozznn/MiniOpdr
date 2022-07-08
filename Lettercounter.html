@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lettercounter</title>
+    <script>
+        var word = "";
+        var letter = "";
+
+        function buttonKlik(){
+            word = document.getElementById("wordbox").value.toLowerCase();
+            letter = document.getElementById("letterbox").value.toLowerCase();
+
+            if (word == ""){
+                document.getElementById("answerspan").innerHTML = "Voer een woord in"
+            }else if (letter.length != 1){                
+                document.getElementById("answerspan").innerHTML = "Voer één letter in"
+            }else {
+                countLetter();
+            }
+        }
+
+        function countLetter(){
+            var counter = 0;
+
+            for (var i = 0; i < word.length; i++){
+                if (word[i] == letter){
+                    counter++;
+                }
+            }
+
+            document.getElementById("answerspan").innerHTML = 
+                "Letter "+letter.toUpperCase()+" komt "+counter+" maal voor in het woord '"+word+"'.";
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="wordbox" value="Voer woord in">
+    <input type="text" id="letterbox" value="Voer letter in">
+    <input type="button" value="Klik hier" onclick="buttonKlik()">
+    <h1><span id="answerspan"></span> </h1>
+</body>
+</html>
