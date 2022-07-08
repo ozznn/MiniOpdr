@@ -6,12 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        
+        var clickHistory = "";
+
         function buttonClick(letter){
+
+
+            if (clickHistory.includes(letter)){
+                var counter = 0;
+
+                for (var i = 0; i < clickHistory.length; i++){
+                    if (clickHistory[i] == letter){
+                        counter++;
+                    }
+                }
+                alert("U heeft al "+counter+" keer op "+letter+" gedrukt.")
+            }
+
+
             var currentString = document.getElementById("clickHistory").innerHTML;
             var returnString = "U heeft op knop "+letter+" geklikt.<br/>";
 
-            document.getElementById("clickHistory").innerHTML = returnString  + currentString;            
+            clickHistory += letter;
+            document.getElementById("clickHistory").innerHTML = returnString  + currentString;         
         }
 
     </script>
